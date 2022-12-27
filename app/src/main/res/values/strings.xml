@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Pengelolaan TA </string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="logo_unand">logo_unand</string>
+    <string name="sidang">Sidang</string>
+    <string name="seminar">Seminar</string>
+    <string name="jadwal">Jadwal</string>
+    <string name="permintaan">Permintaan</string>
+    <string name="halo">Halo</string>
+    <string name="nama">nama</string>
+    <string name="kabar">Bagaimana kabar anda?</string>
+    <string name="foto">foto</string>
+    <string name="home">Home</string>
+    <string name="ta">Permintaan TA</string>
+    <string name="mahasiswa">Mahasiswa TA</string>
+    <string name="profil">Profil</string>
+    <string name="penguji">Tetapkan Penguji</string>
+    <string name="detail_sidang">Detail Sidang</string>
+    <string name="detail_seminar">Detail Seminar</string>
+    <string name="detail_ta">Detail Tugas Akhir</string>
+    <string name="logbook_ta">Logbook Tugas Akhir</string>
+    <string name="peserta_seminar">Peserta Seminar</string>
+    <string name="permintaan_ta">Permintaan Tugas Akhir</string>
+    <string name="tanggal">Hari/Tanggal: Selasa 22 September 2022</string>
+    <string name="pukul">Pukul : 09.00 WIB - Selesai</string>
+    <string name="tempat">Tempat : Ruang Seminar Jurusan SI</string>
+    <string name="dosen">Dosen : Husnil Kamil, MT</string>
+    <string name="judul">Judul : Penerapan Dashboard Pada Restoran Kentang</string>
+    <string name="kentang">Penerapan Dashboard Pada Restoran Kentang</string>
+    <string name="pembimbing">Pembimbing : Husnil Kamil, MT</string>
+    <string name="deskripsi">Deskripsi Singkat</string>
+    <string name="desc">Lorem Ipsum has been the industry</string>
+    <string name="bjorka">Bjorka</string>
+    <string name="tambah">Tambahkan</string>
+    <string name="seminar2">Form Penguji Seminar</string>
+
+</resources>

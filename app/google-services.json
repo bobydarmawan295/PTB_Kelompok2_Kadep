@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "558471451535",
+    "project_id": "kadep-2",
+    "storage_bucket": "kadep-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558471451535:android:7eb1a195c94db57f15b1fa",
+        "android_client_info": {
+          "package_name": "com.example.kadep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558471451535-42ertirv4ocf95r23rvgaro5f8q45o9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKyayEiR8o7Z6Gt6WwjquEaysueeD74vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558471451535-42ertirv4ocf95r23rvgaro5f8q45o9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

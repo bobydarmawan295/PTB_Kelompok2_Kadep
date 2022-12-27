@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pabu"
+    tools:context=".JadwalSidang">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="411dp"
+        android:layout_height="63dp"
+        android:background="@color/tosca"
+        app:itemIconSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
+
+    <TextView
+        android:id="@+id/myDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Jadwal Sidang"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="348dp"
+        android:layout_height="477dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350sp"
+                android:layout_height="75sp"
+                android:layout_marginLeft="30sp"
+                android:layout_marginRight="30sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="@color/bmuda" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="71dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:text="2022"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myDate" />
+
+    <Button
+        android:id="@+id/button30"
+        android:layout_width="59dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="Next"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <Button
+        android:id="@+id/button32"
+        android:layout_width="63dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        android:text="prev"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="September"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/button32"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+</androidx.constraintlayout.widget.ConstraintLayout>
