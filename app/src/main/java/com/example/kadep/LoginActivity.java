@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
 
         editUsername = findViewById(R.id.editUsername);
         editPassword = findViewById(R.id.editPassword);
-
     }
 
     public void onButtonLoginClicked(View view) {
