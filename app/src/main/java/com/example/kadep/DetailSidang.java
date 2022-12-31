@@ -56,7 +56,6 @@ public class DetailSidang extends AppCompatActivity {
         });
 
           //show back button
-
         Intent detailIntent = getIntent();
         if(detailIntent != null){
             namaAgenda = detailIntent.getStringExtra("Peserta Sidang");
@@ -64,9 +63,6 @@ public class DetailSidang extends AppCompatActivity {
             textNamaMahasiswa.setText(namaAgenda);
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
     }
 
     private void createNotificationChannel() {

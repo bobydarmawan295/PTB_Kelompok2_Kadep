@@ -65,7 +65,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .addAction(R.drawable.ic_baseline_notifications_24, "Lihat", resultPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-
         notificationManager.from(this).notify(101, builder.build());
     }
 

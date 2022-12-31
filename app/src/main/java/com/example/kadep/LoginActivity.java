@@ -86,26 +86,26 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
 
-    public Integer validation(String email, String password){
-        Integer valid = 1;
-        if(email.isEmpty()){
-            editUsername.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_IN);
-            editUsername.setError("Masukkan email!");
-            valid = 0;
-        }
-        else{
-            editUsername.getBackground().setColorFilter(getResources().getColor(R.color.pabu), PorterDuff.Mode.SRC_ATOP);
-        }
-
-        if(password.isEmpty()){
-            editPassword.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
-            editPassword.setError("Masukkan password");
-            valid = 0;
-        }
-        else{
-            editPassword.getBackground().setColorFilter(getResources().getColor(R.color.pabu), PorterDuff.Mode.SRC_ATOP);
-        }
-
-        return valid;
-    }
+//    public Integer validation(String email, String password){
+//        Integer valid = 1;
+//        if(email.isEmpty()){
+//            editUsername.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_IN);
+//            editUsername.setError("Masukkan email!");
+//            valid = 0;
+//        }
+//        else{
+//            editUsername.getBackground().setColorFilter(getResources().getColor(R.color.pabu), PorterDuff.Mode.SRC_ATOP);
+//        }
+//
+//        if(password.isEmpty()){
+//            editPassword.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
+//            editPassword.setError("Masukkan password");
+//            valid = 0;
+//        }
+//        else{
+//            editPassword.getBackground().setColorFilter(getResources().getColor(R.color.pabu), PorterDuff.Mode.SRC_ATOP);
+//        }
+//
+//        return valid;
+//    }
 }

@@ -10,5 +10,6 @@ public class JadwalSidang extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal_sidang);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
