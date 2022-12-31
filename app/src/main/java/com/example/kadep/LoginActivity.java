@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                     String message = null;
                     JSONObject jsonObject = null;
                     LoginResponse loginResponse = response.body();
-                    if (loginResponse.getStatus() != ""){
+                    if (loginResponse != null){
                         String token = loginResponse.getAuthorisation().getToken();
                         String name = loginResponse.getUser().getName();
                         String username = loginResponse.getUser().getUsername();
@@ -72,10 +72,11 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra("logx", true);
+                        //intent.putExtra("name", name);
                         startActivity(intent);
                     } else{
-                        message = loginResponse.getStatus();
-                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+//                        message = loginResponse.getStatus();
+                        Toast.makeText(getApplicationContext(), "username password salah", Toast.LENGTH_SHORT).show();
                     }
                 }
                 @Override
