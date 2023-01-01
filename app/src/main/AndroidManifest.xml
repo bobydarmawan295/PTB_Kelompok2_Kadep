@@ -83,6 +83,7 @@
         <activity
             android:name=".DetailSeminar"
             android:exported="false"
+            android:parentActivityName=".PermintaanSeminar"
             android:label="Detail Seminar" />
         <activity
             android:name=".LogbookActivity"

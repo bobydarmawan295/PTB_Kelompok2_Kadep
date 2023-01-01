@@ -2,10 +2,12 @@ package com.example.kadep.network;
 
 import com.example.kadep.models.LoginResponse;
 import com.example.kadep.models.LogoutResponse;
+import com.example.kadep.models.ProfileResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 
@@ -19,6 +21,11 @@ public interface StoryEndpoint {
 
     @POST("api/logout")
     Call<LogoutResponse> logout(
+            @Header("Authorization") String token
+    );
+
+    @GET("api/me")
+    Call<ProfileResponse> profile(
             @Header("Authorization") String token
     );
 

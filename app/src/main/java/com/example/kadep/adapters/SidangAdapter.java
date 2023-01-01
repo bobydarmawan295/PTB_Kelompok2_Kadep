@@ -51,8 +51,6 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.Permintaan
         return listPermintaanSidang.size();
     }
 
-
-
     public interface ItemPermintaanSidangClickListener {
         void onItemPermintaanClick(PermintaanSidang permintaanSidang);
     }

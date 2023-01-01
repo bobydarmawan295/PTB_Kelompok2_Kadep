@@ -11,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kadep.models.LogoutResponse;
+import com.example.kadep.models.ProfileResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,6 +23,9 @@ import retrofit2.Response;
 
 
 public class ProfilFragment extends Fragment {
+
+    TextView textNama, textNip, textUname, textEmail;
+    String nama, nip, email, token, gettoken;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +37,31 @@ public class ProfilFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 logout();
+            }
+        });
+
+        textNama = view.findViewById(R.id.nama_fill);
+        textUname = view.findViewById(R.id.username_fill);
+        textEmail = view.findViewById(R.id.email_fill);
+
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("com.example.kadep.SHARED_KEY", Context.MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("token", "");
+        token = "Bearer " + gettoken;
+
+        Config config = new Config();
+        Call<ProfileResponse> call = config.configRetrofit().profile(token);
+        call.enqueue(new Callback<ProfileResponse>() {
+            @Override
+            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
+                ProfileResponse profileResponse = response.body();
+                textNama.setText(profileResponse.getName());
+                textUname.setText(profileResponse.getName());
+                textEmail.setText(profileResponse.getEmail());
+            }
+
+            @Override
+            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+
             }
         });
 

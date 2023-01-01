@@ -61,5 +61,6 @@
     <string name="dospeng1">Dosen Penguji 1</string>
     <string name="dospeng2">Dosen Penguji 2</string>
     <string name="wib">10:00 WIB</string>
+    <string name="logout">Logout</string>
 
 </resources>

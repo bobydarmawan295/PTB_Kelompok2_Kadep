@@ -59,7 +59,6 @@ public class DetailSidang extends AppCompatActivity {
             startActivity(formPenguji);
         });
 
-          //show back button
         Intent detailIntent = getIntent();
         if(detailIntent != null){
             namaAgenda = detailIntent.getStringExtra("Peserta Sidang");
