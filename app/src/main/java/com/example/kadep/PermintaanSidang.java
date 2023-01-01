@@ -64,6 +64,18 @@ public class PermintaanSidang extends AppCompatActivity implements SidangAdapter
                 "2011522023"
         ));
 
+        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
+                null,
+                "umibozu",
+                "2011522023"
+        ));
+
+        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
+                null,
+                "Bang gin",
+                "2011522023"
+        ));
+
         return listPermintaanSidang;
     }
 

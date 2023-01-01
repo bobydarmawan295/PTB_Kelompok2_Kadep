@@ -15,6 +15,19 @@
         android:theme="@style/Theme.Kadep"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <service
             android:name=".MyFirebaseMessagingService"
@@ -30,7 +43,7 @@
         <activity
             android:name=".JadwalSidang"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".PermintaanSidang"
             android:exported="false" />
@@ -57,8 +70,7 @@
             android:name=".DetailSidang"
             android:exported="true"
             android:label="Detail Sidang"
-            android:parentActivityName=".PermintaanSidang"
-             />
+            android:parentActivityName=".PermintaanSidang" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -66,12 +78,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="true" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

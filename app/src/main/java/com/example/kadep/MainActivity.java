@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity-Debug";
     private  ActivityMainBinding binding;
+    String token;
     private boolean isLoggedIn = false;
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
@@ -48,7 +49,16 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         SharedPreferences sharedPref = getSharedPreferences("com.example.kadep.SHARED_KEY", Context.MODE_PRIVATE);
-        String token = sharedPref.getString("TOKEN", "");
+
+        token = sharedPref.getString("token","");
+        Log.d("token", token);
+        if (token.equals("")){
+            Log.i("token", token);
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
 
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
@@ -71,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Intent mainIntent = getIntent();
         String username = mainIntent.getStringExtra("name");
         isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -106,32 +117,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void logout(View view) {
-        Config config = new Config();
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.kadep.SHARED_KEY", MODE_PRIVATE);
-        String gettoken = sharedPreferences.getString("token", "");
-        String token = "Bearer " + gettoken;
 
-        Call<LogoutResponse> call = config.configRetrofit().logout(token);
-        call.enqueue(new Callback<LogoutResponse>() {
-            @Override
-            public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
-
-                if (response.code() == 200){
-                    if (response.isSuccessful()){
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        sharedPreferences.edit().clear().apply();
-                        startActivity(intent);
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<LogoutResponse> call, Throwable t) {
-                Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 }

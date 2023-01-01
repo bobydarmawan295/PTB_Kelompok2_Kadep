@@ -17,17 +17,5 @@ public class JadwalSeminar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal_seminar);
 
-        calendarView = findViewById(R.id.kalender);
-        myDate = findViewById(R.id.myDate);
-
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                String date = (i1 + 1) + "/" + i2 + "/" + i;
-                myDate.setText(date);
-            }
-        });
-
-
     }
 }
