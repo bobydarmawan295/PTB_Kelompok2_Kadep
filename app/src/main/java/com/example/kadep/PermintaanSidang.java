@@ -29,6 +29,8 @@ public class PermintaanSidang extends AppCompatActivity implements SidangAdapter
 
         rv_sidang.setLayoutManager(layoutManager);
         rv_sidang.setAdapter(adapter);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public ArrayList<com.example.kadep.models.PermintaanSidang> getPermintaanSidang(){

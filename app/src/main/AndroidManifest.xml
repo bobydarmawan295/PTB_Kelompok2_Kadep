@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FormPengujiSidang"
+            android:exported="false"
+            android:label="Form Penguji Sidang"
+            android:parentActivityName=".DetailSidang">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -24,6 +33,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -39,32 +49,45 @@
 
         <activity
             android:name=".FormPengujiSeminar"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".DetailSeminar"
+            android:label="Form Penguji Seminar" />
         <activity
             android:name=".JadwalSidang"
             android:exported="false"
+            android:label="Jadwal Sidang"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".PermintaanSidang"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Permintaan Sidang"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".JadwalSeminar"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Jadwal Seminar"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".PermintaanSeminar"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Permintaan Seminar"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".PesertaSeminar"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Peserta Seminar" />
         <activity
             android:name=".DetailTA"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Detail Tugas Akhir" />
         <activity
             android:name=".DetailSeminar"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Detail Seminar" />
         <activity
             android:name=".LogbookActivity"
             android:exported="true"
+            android:label="Logbook Tuga Akhir"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
             android:name=".DetailSidang"

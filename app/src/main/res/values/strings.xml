@@ -44,5 +44,22 @@
     <string name="location">Ruang Seminar SI</string>
     <string name="vallen">Vallen Adithya Reksana</string>
     <string name="nim2">2011522017</string>
+    <string name="jadwal2">Hari/Tanggal sidang</string>
+    <string name="hari">Selasa/22 September 2022</string>
+    <string name="waktu">Pukul</string>
+    <string name="jam">10.00 WIB</string>
+    <string name="seminar_jurusan">Ruang Seminar Jurusan Sistem Informasi</string>
+    <string name="tempat2">Tempat</string>
+    <string name="judul2">judul</string>
+    <string name="dosbing">Dosen Pembimbing</string>
+    <string name="pak_husnil">Husnil Kamil, M.T</string>
+    <string name="dospeng">Dosen Penguji</string>
+    <string name="Nama">Nama</string>
+    <string name="Nim">Nim</string>
+    <string name="NIM">NIM</string>
+    <string name="judul_tugas_akhir">Judul Tugas Akhir</string>
+    <string name="dospeng1">Dosen Penguji 1</string>
+    <string name="dospeng2">Dosen Penguji 2</string>
+    <string name="wib">10:00 WIB</string>
 
 </resources>

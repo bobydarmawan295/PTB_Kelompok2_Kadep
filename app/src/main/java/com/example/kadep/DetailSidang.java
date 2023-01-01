@@ -54,6 +54,9 @@ public class DetailSidang extends AppCompatActivity {
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
             notificationManager.notify(101, builder.build());
+
+            Intent formPenguji = new Intent(DetailSidang.this, FormPengujiSidang.class);
+            startActivity(formPenguji);
         });
 
           //show back button

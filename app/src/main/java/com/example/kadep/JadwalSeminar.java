@@ -17,5 +17,7 @@ public class JadwalSeminar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal_seminar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

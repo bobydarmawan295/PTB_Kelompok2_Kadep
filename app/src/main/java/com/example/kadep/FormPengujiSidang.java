@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class FormPengujiSeminar extends AppCompatActivity {
+public class FormPengujiSidang extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form_penguji_seminar);
+        setContentView(R.layout.activity_form_penguji_sidang);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

@@ -10,5 +10,8 @@ public class PermintaanSeminar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_permintaan_seminar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

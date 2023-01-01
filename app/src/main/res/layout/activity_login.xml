@@ -9,29 +9,28 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="107dp"
-        android:layout_height="136dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="214dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="72dp"
         android:contentDescription="@string/logo_unand"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_unand" />
+        app:srcCompat="@drawable/buku" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="35dp"
-        app:startIconDrawable="@drawable/ic_username"
+        android:hint="@string/username"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:hint="@string/username"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:startIconDrawable="@drawable/ic_username">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editUsername"
@@ -63,7 +62,7 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="56dp"
         android:background="@color/tosca"
         android:onClick="onButtonLoginClicked"
         android:text="@string/login"
