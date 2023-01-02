@@ -125,7 +125,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/profil_update_btn"
             android:layout_width="156dp"
             android:layout_height="59dp"
             android:layout_marginStart="32dp"
@@ -140,7 +140,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView6" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/change_password_btn"
             android:layout_width="156dp"
             android:layout_height="57dp"
             android:layout_marginTop="68dp"

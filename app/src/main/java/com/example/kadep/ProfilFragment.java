@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class ProfilFragment extends Fragment {
 
     TextView textNama, textNip, textUname, textEmail;
     String nama, nip, email, token, gettoken;
+    Button updateProfile,changePassword;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +40,18 @@ public class ProfilFragment extends Fragment {
             public void onClick(View view) {
                 logout();
             }
+        });
+
+        updateProfile = view.findViewById(R.id.profil_update_btn);
+        updateProfile.setOnClickListener(views -> {
+            Intent updateProfil = new Intent(getActivity().getApplicationContext(), UpdateProfile.class);
+            startActivity(updateProfil);
+        });
+
+        changePassword = view.findViewById(R.id.change_password_btn);
+        changePassword.setOnClickListener(views -> {
+            Intent gantiPass = new Intent(getActivity().getApplicationContext(), GantiPassword.class);
+            startActivity(gantiPass);
         });
 
         textNama = view.findViewById(R.id.nama_fill);

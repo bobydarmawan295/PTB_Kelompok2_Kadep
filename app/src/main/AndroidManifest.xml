@@ -16,6 +16,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".GantiPassword"
+            android:parentActivityName=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UpdateProfile"
+            android:parentActivityName=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".FormPengujiSidang"
             android:exported="false"
             android:label="Form Penguji Sidang"
@@ -50,8 +66,8 @@
         <activity
             android:name=".FormPengujiSeminar"
             android:exported="false"
-            android:parentActivityName=".DetailSeminar"
-            android:label="Form Penguji Seminar" />
+            android:label="Form Penguji Seminar"
+            android:parentActivityName=".DetailSeminar" />
         <activity
             android:name=".JadwalSidang"
             android:exported="false"
@@ -83,8 +99,8 @@
         <activity
             android:name=".DetailSeminar"
             android:exported="false"
-            android:parentActivityName=".PermintaanSeminar"
-            android:label="Detail Seminar" />
+            android:label="Detail Seminar"
+            android:parentActivityName=".PermintaanSeminar" />
         <activity
             android:name=".LogbookActivity"
             android:exported="true"
