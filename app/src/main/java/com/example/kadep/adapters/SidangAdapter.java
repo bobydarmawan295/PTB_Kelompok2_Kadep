@@ -10,27 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kadep.R;
-import com.example.kadep.models.PermintaanSidang;
+import com.example.kadep.models.SeminarsItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.PermintaanSidangViewHolder> {
 
-    ArrayList<PermintaanSidang> listPermintaanSidang =  new ArrayList<>();
+    private List<SeminarsItem> itemThesis = new ArrayList<>();
     ItemPermintaanSidangClickListener listener;
 
-    public SidangAdapter(ArrayList<PermintaanSidang> detailSidang) {
-        this.listPermintaanSidang = detailSidang;
-    }
-
-    public void setListPermintaanSidang(ArrayList<PermintaanSidang> detailSidang) {
-        this.listPermintaanSidang = detailSidang;
-    }
-
-    public SidangAdapter(ArrayList<PermintaanSidang> listPermintaanSidang, ItemPermintaanSidangClickListener listener) {
-        this.listPermintaanSidang = listPermintaanSidang;
-        this.listener = listener;
+    public void setItemThesis(List<SeminarsItem> itemThesis) {
+        this.itemThesis = itemThesis;
+        notifyDataSetChanged();
     }
 
     public void setListener(ItemPermintaanSidangClickListener listener) {
@@ -45,22 +38,24 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.Permintaan
         return new PermintaanSidangViewHolder(view);
     }
 
-
     @Override
     public int getItemCount() {
-        return listPermintaanSidang.size();
+        return itemThesis.size();
     }
 
     public interface ItemPermintaanSidangClickListener {
-        void onItemPermintaanClick(PermintaanSidang permintaanSidang);
+        void onItemPermintaanClick(SeminarsItem permintaanSidang);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull PermintaanSidangViewHolder holder, int position) {
-        PermintaanSidang permintaanSidang = listPermintaanSidang.get(position);
+        SeminarsItem permintaanSidang = itemThesis.get(position);
         holder.imageMhs.setImageResource((R.drawable.logo_unand));
-        holder.namaMhs.setText(permintaanSidang.getNama_mhs());
-        holder.nimMhs.setText(permintaanSidang.getNim_mhs());
+        String str1= permintaanSidang.getThesis().getStudent().getName();
+        String str2 = str1.toLowerCase();
+        holder.namaMhs.setText(SeminarAdapter.StringFormatter.capitalizeWord(str2));
+        holder.nimMhs.setText(permintaanSidang.getThesis().getStudent().getNim());
     }
 
     public class PermintaanSidangViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -79,8 +74,21 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.Permintaan
 
         @Override
         public void onClick(View view) {
-            PermintaanSidang permintaanSidang = listPermintaanSidang.get(getAdapterPosition());
+            SeminarsItem permintaanSidang = itemThesis.get(getAdapterPosition());
             listener.onItemPermintaanClick(permintaanSidang);
+        }
+    }
+
+    public static class StringFormatter {
+        public static String capitalizeWord(String str){
+            String words[]=str.split("\\s");
+            String capitalizeWord="";
+            for(String w:words){
+                String first=w.substring(0,1);
+                String afterfirst=w.substring(1);
+                capitalizeWord+=first.toUpperCase()+afterfirst+" ";
+            }
+            return capitalizeWord.trim();
         }
     }
 

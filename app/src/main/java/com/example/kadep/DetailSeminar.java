@@ -30,7 +30,6 @@ public class DetailSeminar extends AppCompatActivity {
             textNamaMahasiswa = findViewById(R.id.nama_peserta_sidang1);
             textNamaMahasiswa.setText(namaAgenda);
         }
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }

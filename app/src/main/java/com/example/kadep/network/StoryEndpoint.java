@@ -3,6 +3,7 @@ package com.example.kadep.network;
 import com.example.kadep.models.ChangePasswordResponse;
 import com.example.kadep.models.LoginResponse;
 import com.example.kadep.models.LogoutResponse;
+import com.example.kadep.models.PermintaanSeminarResponse;
 import com.example.kadep.models.PermintaanSidangResponse;
 import com.example.kadep.models.ProfileResponse;
 import com.example.kadep.models.UpdateProfileResponse;
@@ -50,7 +51,12 @@ public interface StoryEndpoint {
     );
 
     @GET("api/admin/thesis/trial-submissions")
-    Call<PermintaanSidangResponse> permintaanSidang(
+    Call<PermintaanSidangResponse> getPermintaanSidang(
+            @Header("Authorization") String token
+    );
+
+    @GET("api/admin/thesis/seminar-submissions")
+    Call<PermintaanSeminarResponse> getPermintaanSeminar(
             @Header("Authorization") String token
     );
 

@@ -4,17 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.example.kadep.adapters.SeminarAdapter;
 import com.example.kadep.adapters.SidangAdapter;
+import com.example.kadep.models.PermintaanSidangResponse;
+import com.example.kadep.models.SeminarsItem;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class PermintaanSidang extends AppCompatActivity implements SidangAdapter.ItemPermintaanSidangClickListener {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class PermintaanSidang extends AppCompatActivity implements SidangAdapter.ItemPermintaanSidangClickListener{
 
     private RecyclerView rv_sidang;
+    String token, gettoken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,70 +34,45 @@ public class PermintaanSidang extends AppCompatActivity implements SidangAdapter
 
         rv_sidang = findViewById(R.id.rv_sidang);
 
-        SidangAdapter adapter = new SidangAdapter(getPermintaanSidang());
-        adapter.setListener(this);
+        SidangAdapter adapter = new SidangAdapter();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        adapter.setListener(this);
 
         rv_sidang.setLayoutManager(layoutManager);
         rv_sidang.setAdapter(adapter);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("com.example.kadep.SHARED_KEY", Context.MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("token", "");
+        token = "Bearer " + gettoken;
+
+        Config config = new Config();
+        Call<PermintaanSidangResponse> call = config.configRetrofit().getPermintaanSidang(token);
+        call.enqueue(new Callback<PermintaanSidangResponse>() {
+            @Override
+            public void onResponse(Call<PermintaanSidangResponse> call, Response<PermintaanSidangResponse> response) {
+                Log.d("PermintaanSidang-Debug", response.toString());
+                PermintaanSidangResponse getPermintaanSidangResponse = response.body();
+                if(getPermintaanSidangResponse != null){
+                    List<SeminarsItem> listThesis = getPermintaanSidangResponse.getSeminars();
+                    Log.d("PermintaanSidang-Debug", String.valueOf(listThesis.size()));
+                    adapter.setItemThesis(listThesis);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PermintaanSidangResponse> call, Throwable t) {
+                Toast.makeText(PermintaanSidang.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
-
-    public ArrayList<com.example.kadep.models.PermintaanSidang> getPermintaanSidang(){
-        ArrayList<com.example.kadep.models.PermintaanSidang> listPermintaanSidang = new ArrayList<>();
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "Boby Darmawan",
-                "2011522023"
-        ));
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "Bang bob",
-                "2011522023"
-        ));
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "M Farhan zuhdi",
-                "2011522030"
-        ));
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "Vallen Adithya Reksana",
-                "2011522017"
-        ));
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "Billie Eilish",
-                "2011522023"
-        ));
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "Bang bob",
-                "2011522023"
-        ));
-
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "umibozu",
-                "2011522023"
-        ));
-
-        listPermintaanSidang.add(new com.example.kadep.models.PermintaanSidang(
-                null,
-                "Bang gin",
-                "2011522023"
-        ));
-
-        return listPermintaanSidang;
-    }
-
 
     @Override
-    public void onItemPermintaanClick(com.example.kadep.models.PermintaanSidang permintaanSidang) {
+    public void onItemPermintaanClick(SeminarsItem permintaanSidang) {
         Intent detailSidang = new Intent(this, DetailSidang.class);
-        detailSidang.putExtra("Peserta Sidang", permintaanSidang.getNama_mhs());
+        detailSidang.putExtra("Peserta Sidang", permintaanSidang.getThesis().getStudent().getName());
         startActivity(detailSidang);
-//        Toast.makeText(this, "Anda mengklik matkul" + permintaanSidang.getNama_mhs(), Toast.LENGTH_SHORT).show();
     }
 }
