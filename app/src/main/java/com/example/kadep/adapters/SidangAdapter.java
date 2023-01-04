@@ -48,7 +48,6 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.Permintaan
         void onItemPermintaanClick(SeminarsItem permintaanSidang);
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull PermintaanSidangViewHolder holder, int position) {
         SeminarsItem permintaanSidang = itemThesis.get(position);
