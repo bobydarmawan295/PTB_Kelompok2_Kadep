@@ -30,6 +30,7 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.Permintaan
         this.listener = listener;
     }
 
+
     @NonNull
     @Override
     public PermintaanSidangViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

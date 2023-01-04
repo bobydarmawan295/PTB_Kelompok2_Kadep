@@ -26,6 +26,7 @@ public class PermintaanSidang extends AppCompatActivity implements SidangAdapter
 
     private RecyclerView rv_sidang;
     String token, gettoken;
+    SeminarsItem tes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +70,15 @@ public class PermintaanSidang extends AppCompatActivity implements SidangAdapter
 
     }
 
+
     @Override
     public void onItemPermintaanClick(SeminarsItem permintaanSidang) {
         Intent detailSidang = new Intent(this, DetailSidang.class);
         detailSidang.putExtra("Peserta Sidang", permintaanSidang.getThesis().getStudent().getName());
+        detailSidang.putExtra("Id Thesis", permintaanSidang.getThesisId())
+
+        ;
         startActivity(detailSidang);
     }
+
 }
