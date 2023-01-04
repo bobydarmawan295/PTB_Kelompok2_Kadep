@@ -76,6 +76,10 @@ public class PermintaanSidang extends AppCompatActivity implements SidangAdapter
         Intent detailSidang = new Intent(this, DetailSidang.class);
         detailSidang.putExtra("Peserta Sidang", permintaanSidang.getThesis().getStudent().getName());
         detailSidang.putExtra("Id Thesis", permintaanSidang.getThesisId());
+        detailSidang.putExtra("NIM", permintaanSidang.getThesis().getStudent().getNim());
+        detailSidang.putExtra("gender", permintaanSidang.getThesis().getStudent().getGender());
+        detailSidang.putExtra("tanggalMulaiTA", permintaanSidang.getThesis().getStartAt());
+        detailSidang.putExtra("judulSidang", permintaanSidang.getThesis().getTitle());
         startActivity(detailSidang);
     }
 

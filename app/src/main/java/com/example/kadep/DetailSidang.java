@@ -22,7 +22,7 @@ import retrofit2.Response;
 
 public class DetailSidang extends AppCompatActivity {
 
-    TextView textTanggal, textPukulMulai, textPukulSelesai, textNilaiSidang, textDospeng1, textDospeng2;
+    TextView textTanggalSidang, textNIM, textTanggalMulai, textJudul, textGender, textDospeng1, textDospeng2;
     String  token, gettoken;
     ExaminersItem penguji;
 
@@ -45,10 +45,11 @@ public class DetailSidang extends AppCompatActivity {
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        textTanggal = findViewById(R.id.tanggal_sidang);
-        textPukulMulai = findViewById(R.id.tanggal_mulai);
-        textPukulSelesai = findViewById(R.id.tanggal_selesai);
-        textNilaiSidang = findViewById(R.id.nilai_sidang);
+        textNIM = findViewById(R.id.nim_sidang);
+        textGender = findViewById(R.id.gender);
+        textTanggalSidang = findViewById(R.id.tanggal_sidang);
+        textTanggalMulai = findViewById(R.id.tanggal_ta);
+        textJudul = findViewById(R.id.judul_sidang);
 //        textDospeng1 = findViewById(R.id.dospeng1);
 //        textDospeng2 = findViewById(R.id.dospeng2);
         int[] list_dospeng= {
@@ -62,6 +63,10 @@ public class DetailSidang extends AppCompatActivity {
         token = "Bearer " + gettoken;
 
         int idThesis = detailIntent.getIntExtra("Id Thesis", 0);
+        String NIM = detailIntent.getStringExtra("NIM");
+        String tanggalMulai = detailIntent.getStringExtra("tanggalMulaiTA");
+        String tanggalSidang= detailIntent.getStringExtra("judulSidang");
+        int gender = detailIntent.getIntExtra("gender", 0);
         List<String> list=new ArrayList<String>();
 
         Config config = new Config();
@@ -70,7 +75,15 @@ public class DetailSidang extends AppCompatActivity {
             @Override
             public void onResponse(Call<DetailSidangResponse> call, Response<DetailSidangResponse> response) {
                 DetailSidangResponse detailSidangResponse = response.body();
-                textTanggal.setText(detailSidangResponse.getTrialAt());
+                textNIM.setText(NIM);
+                if(gender == 1){
+                    textGender.setText("Laki-laki");
+                }else{
+                    textGender.setText("Perempuan");
+                }
+                textTanggalSidang.setText(detailSidangResponse.getRegisteredAt());
+                textTanggalMulai.setText(tanggalMulai);
+                textJudul.setText(tanggalSidang);
                 try{
                     for (int i = 0; i < detailSidangResponse.getExaminers().size(); i++) {
                         String dospeng = detailSidangResponse.getExaminers().get(i).getName();
