@@ -4,31 +4,45 @@ import com.google.gson.annotations.SerializedName;
 
 public class Pivot{
 
-    @SerializedName("examiner_id")
-    private int examinerId;
+    @SerializedName("notes")
+    private Object notes;
+
+    @SerializedName("reviewer_id")
+    private int reviewerId;
+
+    @SerializedName("recomendation")
+    private Object recomendation;
 
     @SerializedName("id")
     private int id;
 
     @SerializedName("position")
-    private int position;
+    private Object position;
 
-    @SerializedName("thesis_trial_id")
-    private int thesisTrialId;
+    @SerializedName("thesis_seminar_id")
+    private int thesisSeminarId;
 
-    public int getExaminerId(){
-        return examinerId;
+    public Object getNotes(){
+        return notes;
+    }
+
+    public int getReviewerId(){
+        return reviewerId;
+    }
+
+    public Object getRecomendation(){
+        return recomendation;
     }
 
     public int getId(){
         return id;
     }
 
-    public int getPosition(){
+    public Object getPosition(){
         return position;
     }
 
-    public int getThesisTrialId(){
-        return thesisTrialId;
+    public int getThesisSeminarId(){
+        return thesisSeminarId;
     }
 }

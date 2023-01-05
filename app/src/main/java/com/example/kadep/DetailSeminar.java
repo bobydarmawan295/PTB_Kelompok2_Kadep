@@ -27,7 +27,7 @@ public class DetailSeminar extends AppCompatActivity {
         Intent detailIntent = getIntent();
         if(detailIntent != null){
             namaAgenda = detailIntent.getStringExtra("Peserta Sidang");
-            textNamaMahasiswa = findViewById(R.id.nama_peserta_sidang1);
+            textNamaMahasiswa = findViewById(R.id.nama_peserta_seminar);
             textNamaMahasiswa.setText(namaAgenda);
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
