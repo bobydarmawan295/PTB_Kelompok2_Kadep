@@ -9,6 +9,7 @@ import com.example.kadep.models.LogoutResponse;
 import com.example.kadep.models.PermintaanSeminarResponse;
 import com.example.kadep.models.PermintaanSidangResponse;
 import com.example.kadep.models.ProfileResponse;
+import com.example.kadep.models.SeminarsItem;
 import com.example.kadep.models.UpdateProfileResponse;
 import com.example.kadep.models.User;
 
@@ -58,7 +59,7 @@ public interface StoryEndpoint {
             @Field("confirm_password") String confPass
     );
 
-    @GET("/api/admin/thesis/seminar-submissions")
+    @GET("api/admin/thesis/seminar-submissions")
     Call<PermintaanSeminarResponse> getPermintaanSeminar(
             @Header("Authorization") String token
     );
@@ -71,6 +72,12 @@ public interface StoryEndpoint {
 
     @GET("api/theses/{id}/trials")
     Call<DetailSidangResponse> getDetailSidang(
+            @Header("Authorization") String token,
+            @Path("id") int groupId
+    );
+
+    @GET("api/theses/{id}/seminars")
+    Call<SeminarsItem> getDetailSeminar(
             @Header("Authorization") String token,
             @Path("id") int groupId
     );

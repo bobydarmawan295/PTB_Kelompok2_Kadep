@@ -1,5 +1,6 @@
 package com.example.kadep;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,7 +51,7 @@ public class PermintaanSeminar extends AppCompatActivity implements SeminarAdapt
         Call<PermintaanSeminarResponse> call = config.configRetrofit().getPermintaanSeminar(token);
         call.enqueue(new Callback<PermintaanSeminarResponse>() {
             @Override
-            public void onResponse(Call<PermintaanSeminarResponse> call, Response<PermintaanSeminarResponse> response) {
+            public void onResponse(@NonNull Call<PermintaanSeminarResponse> call, @NonNull Response<PermintaanSeminarResponse> response) {
                 Log.d("PermintaanSeminar-Debug", response.toString());
                 PermintaanSeminarResponse getPermintaanSidangResponse = response.body();
                 if(getPermintaanSidangResponse != null){

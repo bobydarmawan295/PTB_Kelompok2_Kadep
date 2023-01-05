@@ -12,9 +12,9 @@ public class Config {
     public static final Integer SUCCESS_RESULT = 1;
     public static final Integer FAILURE_RESULT = 0;
 
-    public StoryEndpoint configRetrofit() {
+    public static StoryEndpoint configRetrofit() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API_BASE_URL)
+                .baseUrl("http://ptb-api.husnilkamil.my.id/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(new OkHttpClient.Builder().build())
                 .build();

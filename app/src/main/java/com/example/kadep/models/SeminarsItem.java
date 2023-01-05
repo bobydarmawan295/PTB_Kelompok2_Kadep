@@ -2,13 +2,10 @@ package com.example.kadep.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SeminarsItem{
+public class SeminarsItem extends Thesis{
 
     @SerializedName("room_id")
-    private Object roomId;
-
-    @SerializedName("end_at")
-    private Object endAt;
+    private int roomId;
 
     @SerializedName("thesis_id")
     private int thesisId;
@@ -25,38 +22,32 @@ public class SeminarsItem{
     @SerializedName("file_report")
     private String fileReport;
 
+    @SerializedName("recommendation")
+    private Object recommendation;
+
     @SerializedName("description")
     private Object description;
 
     @SerializedName("created_at")
     private String createdAt;
 
-    @SerializedName("thesis_rubric_id")
-    private int thesisRubricId;
-
-    @SerializedName("start_at")
-    private Object startAt;
+    @SerializedName("seminar_at")
+    private String seminarAt;
 
     @SerializedName("file_journal")
     private String fileJournal;
 
-    @SerializedName("score")
-    private Object score;
-
     @SerializedName("updated_at")
     private String updatedAt;
-
-    @SerializedName("grade")
-    private Object grade;
 
     @SerializedName("thesis")
     private Thesis thesis;
 
-    @SerializedName("trial_at")
-    private Object trialAt;
-
     @SerializedName("id")
     private int id;
+
+    @SerializedName("file_attendance")
+    private Object fileAttendance;
 
     @SerializedName("online_url")
     private Object onlineUrl;
@@ -64,12 +55,8 @@ public class SeminarsItem{
     @SerializedName("status")
     private int status;
 
-    public Object getRoomId(){
+    public int getRoomId(){
         return roomId;
-    }
-
-    public Object getEndAt(){
-        return endAt;
     }
 
     public int getThesisId(){
@@ -92,6 +79,10 @@ public class SeminarsItem{
         return fileReport;
     }
 
+    public Object getRecommendation(){
+        return recommendation;
+    }
+
     public Object getDescription(){
         return description;
     }
@@ -100,40 +91,28 @@ public class SeminarsItem{
         return createdAt;
     }
 
-    public int getThesisRubricId(){
-        return thesisRubricId;
-    }
-
-    public Object getStartAt(){
-        return startAt;
+    public String getSeminarAt(){
+        return seminarAt;
     }
 
     public String getFileJournal(){
         return fileJournal;
     }
 
-    public Object getScore(){
-        return score;
-    }
-
     public String getUpdatedAt(){
         return updatedAt;
-    }
-
-    public Object getGrade(){
-        return grade;
     }
 
     public Thesis getThesis(){
         return thesis;
     }
 
-    public Object getTrialAt(){
-        return trialAt;
-    }
-
     public int getId(){
         return id;
+    }
+
+    public Object getFileAttendance(){
+        return fileAttendance;
     }
 
     public Object getOnlineUrl(){
