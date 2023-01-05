@@ -66,6 +66,8 @@ public class DetailSidang extends AppCompatActivity {
         String NIM = detailIntent.getStringExtra("NIM");
         String tanggalMulai = detailIntent.getStringExtra("tanggalMulaiTA");
         String tanggalSidang= detailIntent.getStringExtra("judulSidang");
+        Integer idSidang= detailIntent.getIntExtra("Id Sidang", 0);
+        String id = idSidang.toString();
         int gender = detailIntent.getIntExtra("gender", 0);
         List<String> list=new ArrayList<String>();
 
@@ -81,6 +83,7 @@ public class DetailSidang extends AppCompatActivity {
                 }else{
                     textGender.setText("Perempuan");
                 }
+                Toast.makeText(DetailSidang.this, id, Toast.LENGTH_SHORT).show();
                 textTanggalSidang.setText(detailSidangResponse.getRegisteredAt());
                 textTanggalMulai.setText(tanggalMulai);
                 textJudul.setText(tanggalSidang);
@@ -108,6 +111,7 @@ public class DetailSidang extends AppCompatActivity {
         Button formPengujiSidang = findViewById(R.id.btnPenguji);
         formPengujiSidang.setOnClickListener(views -> {
             Intent tetapkanPenguji = new Intent(DetailSidang.this, FormPengujiSidang.class);
+            tetapkanPenguji.putExtra("Id Sidang", idSidang);
             startActivity(tetapkanPenguji);
         });
     }

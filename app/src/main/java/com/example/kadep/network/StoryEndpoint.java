@@ -4,6 +4,7 @@ import com.example.kadep.PermintaanSeminar;
 import com.example.kadep.models.ChangePasswordResponse;
 import com.example.kadep.models.DetailSidangResponse;
 import com.example.kadep.models.ExaminersItem;
+import com.example.kadep.models.FormPengujiSidangResponse;
 import com.example.kadep.models.LoginResponse;
 import com.example.kadep.models.LogoutResponse;
 import com.example.kadep.models.PermintaanSeminarResponse;
@@ -68,11 +69,19 @@ public interface StoryEndpoint {
             @Header("Authorization") String token
     );
 
-
     @GET("api/theses/{id}/trials")
     Call<DetailSidangResponse> getDetailSidang(
             @Header("Authorization") String token,
-            @Path("id") int groupId
+            @Path("id") int thesisId
+    );
+
+    @FormUrlEncoded
+    @POST("api/admin/thesis/trials/{id}/examiners")
+    Call<FormPengujiSidangResponse> isiFormPenguji(
+            @Header("Authorization") String token,
+            @Path("id") int studentId,
+            @Field("lecturer_id") int kode_dosen,
+            @Field("position") int posisi_penguji
     );
 
 

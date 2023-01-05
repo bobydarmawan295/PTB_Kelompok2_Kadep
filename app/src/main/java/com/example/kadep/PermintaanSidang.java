@@ -67,20 +67,18 @@ public class PermintaanSidang extends AppCompatActivity implements SidangAdapter
                 Toast.makeText(PermintaanSidang.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
-
 
     @Override
     public void onItemPermintaanClick(SeminarsItem permintaanSidang) {
         Intent detailSidang = new Intent(this, DetailSidang.class);
         detailSidang.putExtra("Peserta Sidang", permintaanSidang.getThesis().getStudent().getName());
         detailSidang.putExtra("Id Thesis", permintaanSidang.getThesisId());
+        detailSidang.putExtra("Id Sidang", permintaanSidang.getId());
         detailSidang.putExtra("NIM", permintaanSidang.getThesis().getStudent().getNim());
         detailSidang.putExtra("gender", permintaanSidang.getThesis().getStudent().getGender());
         detailSidang.putExtra("tanggalMulaiTA", permintaanSidang.getThesis().getStartAt());
         detailSidang.putExtra("judulSidang", permintaanSidang.getThesis().getTitle());
         startActivity(detailSidang);
     }
-
 }

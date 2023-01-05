@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
                     @Override
