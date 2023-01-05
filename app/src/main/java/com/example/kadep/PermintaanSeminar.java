@@ -72,6 +72,12 @@ public class PermintaanSeminar extends AppCompatActivity implements SeminarAdapt
     public void onItemPermintaanClick(SeminarsItem permintaanSeminar) {
         Intent detailSeminar = new Intent(this, DetailSeminar.class);
         detailSeminar.putExtra("Peserta Sidang", permintaanSeminar.getThesis().getStudent().getName());
+        detailSeminar.putExtra("Id Thesis", permintaanSeminar.getThesisId());
+        detailSeminar.putExtra("Id Sidang", permintaanSeminar.getId());
+        detailSeminar.putExtra("NIM", permintaanSeminar.getThesis().getStudent().getNim());
+        detailSeminar.putExtra("gender", permintaanSeminar.getThesis().getStudent().getGender());
+        detailSeminar.putExtra("tanggalMulaiTA", permintaanSeminar.getThesis().getStartAt());
+        detailSeminar.putExtra("judulSidang", permintaanSeminar.getThesis().getTitle());
         startActivity(detailSeminar);
     }
 }

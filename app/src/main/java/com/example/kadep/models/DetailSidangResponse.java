@@ -3,7 +3,7 @@ package com.example.kadep.models;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class DetailSidangResponse{
+public class DetailSeminarResponse {
 
     @SerializedName("room_id")
     private Object roomId;
