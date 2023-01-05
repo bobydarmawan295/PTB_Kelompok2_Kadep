@@ -39,7 +39,7 @@ public class DetailSeminar extends AppCompatActivity {
                 namaAgenda = detailIntent.getStringExtra("Peserta Seminar");
                 textNamaMahasiswa = findViewById(R.id.nama_peserta_seminar);
                 String str = namaAgenda.toLowerCase();
-                String str2 = com.example.kadep.DetailSidang.StringFormatter.capitalizeWord(str);
+                String str2 = com.example.kadep.DetailSeminar.StringFormatter.capitalizeWord(str);
                 textNamaMahasiswa.setText(str2);
             }
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -74,7 +74,7 @@ public class DetailSeminar extends AppCompatActivity {
             call.enqueue(new Callback<DetailSeminarResponse>() {
                 @Override
                 public void onResponse(Call<DetailSeminarResponse> call, Response<DetailSeminarResponse> response) {
-                    DetailSeminarResponse detailSidangResponse = response.body();
+                    DetailSeminarResponse detailSeminarResponse = response.body();
                     textNIM.setText(NIM);
                     if(gender == 1){
                         textGender.setText("Laki-laki");
@@ -82,21 +82,21 @@ public class DetailSeminar extends AppCompatActivity {
                         textGender.setText("Perempuan");
                     }
                     Toast.makeText(com.example.kadep.DetailSeminar.this, id, Toast.LENGTH_SHORT).show();
-                    textTanggalSidang.setText(detailSidangResponse.getRegisteredAt());
+                    textTanggalSidang.setText(detailSeminarResponse.getRegisteredAt());
                     jamMulai.setText(tanggalMulai);
                     textJudul.setText(tanggalSidang);
-                    try{
-                        for (int i = 0; i < detailSidangResponse.getExaminers().size(); i++) {
-                            String dospeng = detailSidangResponse.getExaminers().get(i).getName();
-                            list.add(dospeng);
-                        }
-                        for (int j = 0; j < list_dospeng.length; j++) {
-                            ((TextView) findViewById(list_dospeng[j])).setText(list.get(j));
-                        }
-
-                    }catch(IndexOutOfBoundsException e){
-                        Toast.makeText(com.example.kadep.DetailSeminar.this, "Penguji Sidang Belum Ada", Toast.LENGTH_SHORT).show();
-                    }
+//                    try{
+//                        for (int i = 0; i < detailSidangResponse.getExaminers().size(); i++) {
+//                            String dospeng = detailSidangResponse.getExaminers().get(i).getName();
+//                            list.add(dospeng);
+//                        }
+//                        for (int j = 0; j < list_dospeng.length; j++) {
+//                            ((TextView) findViewById(list_dospeng[j])).setText(list.get(j));
+//                        }
+//
+//                    }catch(IndexOutOfBoundsException e){
+//                        Toast.makeText(com.example.kadep.DetailSeminar.this, "Penguji Sidang Belum Ada", Toast.LENGTH_SHORT).show();
+//                    }
 
                 }
 

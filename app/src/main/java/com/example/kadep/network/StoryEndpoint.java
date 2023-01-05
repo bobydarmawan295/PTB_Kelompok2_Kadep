@@ -1,6 +1,7 @@
 package com.example.kadep.network;
 
 import com.example.kadep.models.ChangePasswordResponse;
+import com.example.kadep.models.DetailSeminarResponse;
 import com.example.kadep.models.DetailSidangResponse;
 import com.example.kadep.models.LoginResponse;
 import com.example.kadep.models.LogoutResponse;
@@ -69,5 +70,10 @@ public interface StoryEndpoint {
             @Path("id") int groupId
     );
 
+    @GET("api/theses/{id}/seminars")
+    Call<DetailSeminarResponse> getDetailSeminar(
+            @Header("Authorization") String token,
+            @Path("id") int thesisId
+    );
 
 }
